@@ -103,8 +103,8 @@ export const WebGPUCanvas: React.FC<Props> = ({ demoId, preview }) => {
         <div
             ref={wrapperRef}
             className="canvasWrap"
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
+            onMouseEnter={() => preview ? setHover(true) : null}
+            onMouseLeave={() => preview ? setHover(false) : null}
             title={status}
         >
             <canvas ref={canvasRef} style={{ width: "100%", height: "100%" }} />
