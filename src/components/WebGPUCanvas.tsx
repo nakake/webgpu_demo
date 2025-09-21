@@ -7,14 +7,16 @@ import { useInViewport } from "../hooks/useInViewport";
 type Props = {
     demoId: string;
     preview?: boolean;
+    active?: boolean;
 };
 
-export const WebGPUCanvas: React.FC<Props> = ({ demoId, preview }) => {
+export const WebGPUCanvas: React.FC<Props> = ({ demoId, preview, active }) => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const { ref: wrapperRef, visible } = useInViewport<HTMLDivElement>();
     const [status, setStatus] = useState("…");
 
     const [hover, setHover] = useState(false);
+    const isActive = preview ? (active ?? hover) : true;
 
     useEffect(() => {
         let raf = 0;
@@ -68,7 +70,7 @@ export const WebGPUCanvas: React.FC<Props> = ({ demoId, preview }) => {
                 demo!.tick(dt);
             };
 
-            if (preview && !hover) {
+            if (preview && !isActive) {
                 tickOnce();
                 return;
             }
@@ -97,14 +99,14 @@ export const WebGPUCanvas: React.FC<Props> = ({ demoId, preview }) => {
             demo?.dispose?.();
             void cleanupPromise;
         };
-    }, [demoId, preview, visible, hover]);
+    }, [demoId, preview, visible, isActive]);
 
     return (
         <div
             ref={wrapperRef}
             className="canvasWrap"
-            onMouseEnter={() => preview ? setHover(true) : null}
-            onMouseLeave={() => preview ? setHover(false) : null}
+            onMouseEnter={() => (preview && active === undefined) ? setHover(true) : null}
+            onMouseLeave={() => (preview && active === undefined) ? setHover(false) : null}
             title={status}
         >
             <canvas ref={canvasRef} style={{ width: "100%", height: "100%" }} />
