@@ -6,6 +6,8 @@ export async function loadDemo(id: string): Promise<DemoFactory> {
             return (await import("./rotatingTriangle")).createRotatingTriangle;
         case "clear-colors":
             return (await import("./clearColors")).createClearColors;
+        case "compute-particles-free-fall":
+            return (await import("./computeParticlesFreeFall")).createComputeParticles;
         default:
             return (await import("./rotatingTriangle")).createRotatingTriangle;
     }

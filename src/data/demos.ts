@@ -15,5 +15,10 @@ export const DEMOS: Demo[] = [
         id: "clear-colors",
         title: "クリアカラー切替",
         description: "フレームごとにクリアカラーが変化するだけの超最小。"
-    }
+    },
+    {
+        id: "compute-particles-free-fall",
+        title: "重力落下する粒子",
+        description: "コンピュートシェーダで粒子の位置を重力計算で落下させ、頂点シェーダで描画。"
+    },
 ];
