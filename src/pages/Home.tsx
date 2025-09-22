@@ -28,7 +28,6 @@ export default function Home() {
                             onBlur={() => setHoveredId((cur) => cur === d.id ? null : cur)}
                         >
                             <h3>{d.title}</h3>
-                            <p>{d.description}</p>
                             <WebGPUCanvas demoId={d.id} preview active={hoveredId === d.id} />
                         </Link>
                     ))}
