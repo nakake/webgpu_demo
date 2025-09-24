@@ -27,8 +27,13 @@ export const DEMOS: Demo[] = [
         description: ""
     },
     {
-        id: "input-mouse",
+        id: "input-mouse-color",
         title: "マウス入力",
         description: "マウス位置に反応して色が変わる。"
+    },
+    {
+        id: "input-mouse-ring",
+        title: "マウス入力（リング）",
+        description: "マウス位置に反応してリングが表示される。"
     },
 ];

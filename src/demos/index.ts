@@ -10,8 +10,10 @@ export async function loadDemo(id: string): Promise<DemoFactory> {
             return (await import("./computeParticlesFreeFall")).createComputeParticles;
         case "demo":
             return (await import("./demo")).createDemo;
-        case "input-mouse":
-            return (await import("./inputMouse")).createInputMouse;
+        case "input-mouse-color":
+            return (await import("./inputMouseColor")).createInputMouse;
+        case "input-mouse-ring":
+            return (await import("./inputMouseRing")).createInputMouse;
         default:
             return (await import("./rotatingTriangle")).createRotatingTriangle;
     }

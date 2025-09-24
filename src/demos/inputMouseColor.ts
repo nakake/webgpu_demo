@@ -73,9 +73,12 @@ fn fs(@builtin(position) pos: vec4<f32>) -> @location(0) vec4<f32> {
         entries: [{ binding: 0, resource: { buffer: uniformBuffer } }]
     });
 
+    let time = 0;
+
     function tick(dt: number) {
+        time += dt;
         const tmp = new Float32Array([
-            dt,
+            time,
             context.canvas.width,
             context.canvas.height,
             0,
