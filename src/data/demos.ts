@@ -21,4 +21,14 @@ export const DEMOS: Demo[] = [
         title: "重力落下する粒子",
         description: "コンピュートシェーダで粒子の位置を重力計算で落下させ、頂点シェーダで描画。"
     },
+    {
+        id: "demo",
+        title: "デモ",
+        description: ""
+    },
+    {
+        id: "input-mouse",
+        title: "マウス入力",
+        description: "マウス位置に反応して色が変わる。"
+    },
 ];
