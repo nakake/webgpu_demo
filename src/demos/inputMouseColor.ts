@@ -1,6 +1,6 @@
 import { DemoFactory } from "./types";
 
-export const createInputMouse: DemoFactory = ({ device, context, format }) => {
+export const createInputMouse: DemoFactory = async ({ device, context, format }) => {
     const code = /* wgsl */`
 struct Params {
     time: f32,

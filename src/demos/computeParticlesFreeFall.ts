@@ -1,6 +1,6 @@
 import type { DemoFactory } from "./types";
 
-export const createComputeParticles: DemoFactory = ({ device, context, format }) => {
+export const createComputeParticles: DemoFactory = async ({ device, context, format }) => {
     const COUNAT = 4096;
     const WORKGROUP_SIZE = 256;
     const RADIUS = 0.0125;

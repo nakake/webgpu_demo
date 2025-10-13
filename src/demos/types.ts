@@ -7,4 +7,4 @@ export type DemoFactory = (args: {
     device: GPUDevice;
     context: GPUCanvasContext;
     format: GPUTextureFormat;
-}) => DemoInstance;
+}) => Promise<DemoInstance>;

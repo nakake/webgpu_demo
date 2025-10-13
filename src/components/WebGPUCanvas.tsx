@@ -58,7 +58,7 @@ export const WebGPUCanvas: React.FC<Props> = ({ demoId, preview, active }) => {
             configure();
 
             const factory = await loadDemo(demoId);
-            demo = factory({ device: device!, context: context!, format });
+            demo = await factory({ device: device!, context: context!, format });
 
             setStatus(preview ? "Preview" : "Rendering…");
 
@@ -108,6 +108,7 @@ export const WebGPUCanvas: React.FC<Props> = ({ demoId, preview, active }) => {
             onMouseEnter={() => (preview && active === undefined) ? setHover(true) : null}
             onMouseLeave={() => (preview && active === undefined) ? setHover(false) : null}
             title={status}
+            style={{ position: "relative" }}
         >
             <canvas ref={canvasRef} style={{ width: "100%", height: "100%" }} />
         </div>

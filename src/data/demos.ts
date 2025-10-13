@@ -36,4 +36,9 @@ export const DEMOS: Demo[] = [
         title: "マウス入力（リング）",
         description: "マウス位置に反応してリングが表示される。"
     },
+    {
+        id: "texture",
+        title: "テクスチャ表示",
+        description: "白のキャンパス部分に画像をドラッグアンドドロップでテクスチャとして表示する。"
+    }
 ];

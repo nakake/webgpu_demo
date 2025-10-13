@@ -14,6 +14,8 @@ export async function loadDemo(id: string): Promise<DemoFactory> {
             return (await import("./inputMouseColor")).createInputMouse;
         case "input-mouse-ring":
             return (await import("./inputMouseRing")).createInputMouse;
+        case "texture":
+            return (await import("./texture")).createTextureDemo;
         default:
             return (await import("./rotatingTriangle")).createRotatingTriangle;
     }

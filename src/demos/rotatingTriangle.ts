@@ -1,6 +1,6 @@
 import type { DemoFactory } from "./types";
 
-export const createRotatingTriangle: DemoFactory = ({ device, context, format }) => {
+export const createRotatingTriangle: DemoFactory = async ({ device, context, format }) => {
     const code = /* wgsl */`
 struct VSOut { @builtin(position) pos: vec4<f32>, @location(0) color: vec3<f32> };
 @vertex fn vs(@builtin(vertex_index) vid:u32, @location(0) ang:f32) -> VSOut {

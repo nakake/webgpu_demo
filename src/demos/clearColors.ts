@@ -1,6 +1,6 @@
 import type { DemoFactory } from "./types";
 
-export const createClearColors: DemoFactory = ({ device, context }) => {
+export const createClearColors: DemoFactory = async ({ device, context }) => {
     let t = 0;
     return {
         tick(dt) {
